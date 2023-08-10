@@ -1,0 +1,138 @@
+.login-main {
+    background-color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Poppins';
+}
+
+.login-base {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 80vh;
+}
+
+.login-base-logo {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: var(--color3);
+    width: 50%;
+    height: 80vh;
+}
+
+.login-base-inputs {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: var(--color4);
+    width: 50%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.site-name p {
+    font-size: 30px;
+}
+
+.site-name span {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: max-content;
+    align-items: center;
+    color: white;
+}
+
+.login-form input {
+    width: 80%;
+    height: 4vh;
+    font-size: 18px;
+    padding: 1vh;
+    outline: none;
+    border-radius: 3px;
+    border: 0 solid transparent;
+}
+
+.login-form button {
+    width: 30%;
+    height: 5vh;
+    cursor: pointer;
+    background-color: var(--color3);
+    outline: none;
+    border: 0 solid transparent;
+    border-radius: 3px;
+    font-size: 15px;
+    color: white;
+    margin-top: 2vh;
+}
+
+.login-form label {
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    margin-left: -64%;
+}
+
+.login-form a {
+    color: white;
+    text-decoration: none;
+}
+
+@media(max-width: 1000px) {
+    .login-base-logo {
+        display: none;
+    }
+
+    .login-base {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .login-base-inputs {
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0px;
+    }
+
+    .login-form {
+        width: 100%;
+        align-items: center;
+    }
+
+    .login-form label {
+        display: none;
+    }
+
+    .login-form input {
+        width: 70%;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    .login-form button {
+        margin-top: 0.5vh;
+        margin-bottom: 0.5vh;
+    }
+
+    .site-name p {
+        font-size: 25px;
+    }
+
+    .site-name span {
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+}

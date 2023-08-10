@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&family=Roboto+Condensed&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +10,15 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+:root {
+  --color1: #100C08;
+  --color2: #1B1B1B;
+  --color3: #2B2B2B;
+  --color4: #3D3D3D;
+
 }
