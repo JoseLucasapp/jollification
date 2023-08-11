@@ -1,4 +1,4 @@
-.login-main {
+.registry-main {
     background-color: var(--color1);
     display: flex;
     justify-content: center;
@@ -8,14 +8,14 @@
     font-family: 'Poppins';
 }
 
-.login-base {
+.registry-base {
     display: flex;
     flex-direction: row;
     width: 80%;
     height: 80vh;
 }
 
-.login-base-logo {
+.registry-base-logo {
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     background-color: var(--color3);
@@ -26,7 +26,7 @@
     justify-content: center;
 }
 
-.login-base-inputs {
+.registry-base-inputs {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: var(--color4);
@@ -48,7 +48,7 @@
     font-weight: 800;
 }
 
-.login-form {
+.registry-form {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -57,7 +57,7 @@
     color: white;
 }
 
-.login-form input {
+.registry-form input {
     width: 80%;
     height: 4vh;
     font-size: 18px;
@@ -67,7 +67,7 @@
     border: 0 solid transparent;
 }
 
-.login-form button {
+.registry-form button {
     width: 30%;
     height: 5vh;
     cursor: pointer;
@@ -80,38 +80,38 @@
     margin-top: 2vh;
 }
 
-.login-form button:hover {
+.registry-form button:hover {
     transition: 1s;
     background-color: var(--color1);
 }
 
-.login-form label {
+.registry-form label {
     margin-top: 2vh;
     margin-bottom: 1vh;
     margin-left: -64%;
 }
 
-.login-form a {
+.registry-form a {
     font-size: 12px;
     color: white;
     text-decoration: none;
 }
 
-.login-form a:hover {
+.registry-form a:hover {
     text-decoration: underline;
 }
 
 @media(max-width: 1000px) {
-    .login-base-logo {
+    .registry-base-logo {
         display: none;
     }
 
-    .login-base {
+    .registry-base {
         width: 100%;
         height: 100vh;
     }
 
-    .login-base-inputs {
+    .registry-base-inputs {
         width: 100%;
         height: 100vh;
         justify-content: center;
@@ -119,22 +119,22 @@
         border-radius: 0px;
     }
 
-    .login-form {
+    .registry-form {
         width: 100%;
         align-items: center;
     }
 
-    .login-form label {
+    .registry-form label {
         display: none;
     }
 
-    .login-form input {
+    .registry-form input {
         width: 70%;
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
 
-    .login-form button {
+    .registry-form button {
         margin-top: 0.5vh;
         margin-bottom: 0.5vh;
     }

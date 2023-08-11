@@ -1,0 +1,52 @@
+.home-main {
+    background-color: var(--color1);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.home-left {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+.home-middle {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.home-right {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+.home-logo {
+    width: 55%;
+    height: 15vh;
+    margin-top: 5vh;
+}
+
+.home-logo img {
+    width: 70%;
+    border-radius: 15px;
+}
+
+.home-user-menu {
+    background-color: var(--color3);
+    width: 40%;
+    height: 15vh;
+    margin-top: 5vh;
+    border-radius: 15px;
+}
+
+.home-user-menu img {
+    width: 100%;
+}
