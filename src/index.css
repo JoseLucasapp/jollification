@@ -7,12 +7,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins';
 }
 
 code {
   font-family: 'Poppins', sans-serif;
   font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 :root {
