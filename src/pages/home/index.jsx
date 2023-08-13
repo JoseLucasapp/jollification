@@ -16,6 +16,34 @@ const Home = () => {
         post: 'kslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjk'
     }]
 
+    const users = [
+        {
+            username: 'user',
+            profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
+        },
+        {
+            username: 'user',
+            profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
+        },
+        {
+            username: 'user',
+            profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
+        },
+        {
+            username: 'user',
+            profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
+        },
+        {
+            username: 'user',
+            profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
+        },
+        {
+            username: 'user',
+            profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
+        },]
+
+    let display = 'none'
+
     function showUserProfileModal() {
         const userMenuModal = document.getElementById('user-menu')
         const closeMenu = document.getElementById('close-menu')
@@ -25,6 +53,9 @@ const Home = () => {
         document.getElementById('footer').style.width = `60%`
         userMenuModal.style.display = 'flex'
         closeMenu.style.display = 'flex'
+
+        closeDeleteModal()
+        closeEditModal()
     }
 
     function hideUserProfileModal() {
@@ -65,10 +96,12 @@ const Home = () => {
         const footerImg = document.getElementById('footer-img')
         const imgUrl = (footerImg.src).split('/')
 
-        if (imgUrl[4] === 'friends.png') {
+        if (imgUrl[4] === 'user.png') {
             footerImg.src = getImg(imgUrl, 'all.png')
-        } else {
+        } else if (imgUrl[4] === 'all.png') {
             footerImg.src = getImg(imgUrl, 'friends.png')
+        } else {
+            footerImg.src = getImg(imgUrl, 'user.png')
         }
 
         function getImg(array, newImg) {
@@ -77,6 +110,43 @@ const Home = () => {
             array.push(newImg)
             return array.join('/')
         }
+    }
+
+    function closeEditModal() {
+        const editProfile = document.getElementById('edit-profile-main')
+
+        editProfile.style.display = 'none'
+    }
+
+    function openEditModal() {
+        const editProfile = document.getElementById('edit-profile-main')
+
+        editProfile.style.display = 'flex'
+        hideUserProfileModal()
+    }
+    function closeDeleteModal() {
+        const deleteProfile = document.getElementById('delete-profile-main')
+
+        deleteProfile.style.display = 'none'
+    }
+
+    function openDeleteModal() {
+        const deleteProfile = document.getElementById('delete-profile-main')
+
+        deleteProfile.style.display = 'flex'
+        hideUserProfileModal()
+    }
+    function closeFriendsModal() {
+        const friendsModal = document.getElementById('friends-modal')
+
+        friendsModal.style.display = 'none'
+    }
+
+    function openFriendsModal() {
+        const friendsModal = document.getElementById('friends-modal')
+
+        friendsModal.style.display = 'flex'
+        hideUserProfileModal()
     }
 
     return (
@@ -116,13 +186,13 @@ const Home = () => {
                     <img src="https://tm.ibxk.com.br/2022/12/15/15135939320320.jpg?ims=1200x675" alt="" />
                 </div>
                 <div className="options-icons">
-                    <img src={process.env.PUBLIC_URL + 'images/edit.png'} alt="" />
-                    <img src={process.env.PUBLIC_URL + 'images/delete.png'} alt="" />
+                    <img src={process.env.PUBLIC_URL + 'images/edit.png'} alt="" onClick={() => openEditModal()} />
+                    <img src={process.env.PUBLIC_URL + 'images/delete.png'} alt="" onClick={() => openDeleteModal()} />
                     <img src={process.env.PUBLIC_URL + 'images/log-out.png'} alt="" />
                 </div>
                 <div className="profile-stats">
                     <p>Username</p>
-                    <p>1 friend</p>
+                    <p onClick={() => openFriendsModal()}>1 friend</p>
                     <p>1 post</p>
                     <p>1 like</p>
                 </div>
@@ -139,6 +209,41 @@ const Home = () => {
 
             <div className="footer" id="footer">
                 <img id="footer-img" src={process.env.PUBLIC_URL + 'images/friends.png'} alt="" onClick={() => toFriends()} />
+            </div>
+
+            <div className="edit-profile-main" id="edit-profile-main" style={{ display: display }}>
+                <div className="close" onClick={() => closeEditModal()}>X</div>
+                <input type="text" name="profilePic" id="profilePic" placeholder="Profile pic" />
+                <input type="text" name="username" id="username" placeholder="Username" />
+                <input type="password" name="pass" id="pass" placeholder="Password" />
+                <input type="password" name="newPass" id="newPass" placeholder="New password" />
+                <button>Edit</button>
+            </div>
+
+            <div className="delete-account-main" id="delete-profile-main">
+                <div className="close" onClick={() => closeDeleteModal()}>X</div>
+                <p>Delete account?</p>
+                <div className="delete-account-buttons">
+
+                    <button>YES</button>
+                    <button>NO</button>
+                </div>
+            </div>
+
+            <div className="friends-modal" id="friends-modal">
+                <div className="close" onClick={() => closeFriendsModal()}>X</div>
+                <ul className="friends-list">
+                    {
+                        users.map(post => (
+                            <li>
+                                <div>
+                                    <img src={post.profile_pic} alt="" />
+                                    <p>{post.username}</p>
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         </div>
     )
