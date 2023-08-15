@@ -37,13 +37,23 @@
     align-items: center;
 }
 
+.site-name {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
 
 .site-name p {
-    font-size: 30px;
+    margin: 0px;
+}
+
+.site-name p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .site-name span {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 800;
 }
 
@@ -64,6 +74,8 @@
     outline: none;
     border-radius: 3px;
     border: 0 solid transparent;
+    background-color: var(--color3);
+    color: white;
 }
 
 .login-form button {
@@ -91,6 +103,7 @@
 }
 
 .login-form a {
+    margin-top: 1vh;
     font-size: 12px;
     color: white;
     text-decoration: none;
@@ -136,10 +149,6 @@
     .login-form button {
         margin-top: 0.5vh;
         margin-bottom: 0.5vh;
-    }
-
-    .site-name p {
-        font-size: 25px;
     }
 
     .site-name span {

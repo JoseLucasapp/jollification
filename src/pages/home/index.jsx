@@ -1,7 +1,11 @@
 import React from "react";
 import './index.css'
 
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
+
+    const navigate = useNavigate()
     const posts = [{
         username: 'user',
         profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
@@ -149,6 +153,10 @@ const Home = () => {
         hideUserProfileModal()
     }
 
+    function logOut() {
+        navigate('/')
+    }
+
     return (
         <div className="home-main">
             <div className="home-left" id="home-left">
@@ -188,7 +196,7 @@ const Home = () => {
                 <div className="options-icons">
                     <img src={process.env.PUBLIC_URL + 'images/edit.png'} alt="" onClick={() => openEditModal()} />
                     <img src={process.env.PUBLIC_URL + 'images/delete.png'} alt="" onClick={() => openDeleteModal()} />
-                    <img src={process.env.PUBLIC_URL + 'images/log-out.png'} alt="" />
+                    <img src={process.env.PUBLIC_URL + 'images/log-out.png'} alt="" onClick={() => logOut()} />
                 </div>
                 <div className="profile-stats">
                     <p>Username</p>

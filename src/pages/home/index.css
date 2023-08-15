@@ -467,3 +467,108 @@
     height: 50px;
     border-radius: 50%;
 }
+
+@media(max-width: 1000px) {
+    .home-main {
+        flex-direction: column;
+    }
+
+    .home-left {
+        position: absolute;
+        display: none;
+        display: hidden;
+    }
+
+    .home-middle {
+        width: 100%;
+        margin-top: 11vh;
+        height: 80vh;
+    }
+
+    .home-right {
+        position: absolute;
+        width: 100%;
+        height: max-content;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .home-logo {
+        display: none;
+    }
+
+    .home-user-menu {
+        margin: 0px;
+        padding: 0px;
+        width: max-content;
+        height: max-content;
+        margin-top: 3vh;
+        background-color: transparent;
+    }
+
+    .home-user-menu img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .footer {
+        margin-bottom: 0px;
+    }
+
+    .home-post-header {
+        width: 100%;
+    }
+
+    .home-post-text {
+        width: 100%;
+    }
+
+    .user-menu {
+        width: 100%;
+        margin-left: 0%;
+        z-index: 10;
+    }
+
+    .close-user-menu {
+        z-index: 11;
+        margin-top: 3vh;
+        margin-left: 5%;
+    }
+
+    .edit-profile-main {
+        width: 90%;
+        height: 45vh;
+        margin-top: 30vh;
+        margin-left: 5%;
+    }
+
+    .edit-profile-main input {
+        width: 85%;
+    }
+
+    .edit-profile-main button {
+        margin-top: 1vh;
+    }
+
+    .edit-profile-main .close {
+        width: 10%;
+        margin-bottom: 37vh;
+        margin-left: 85%;
+    }
+
+    .delete-account-main {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .friends-modal {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .friends-modal .friends-list {
+        margin-top: 5vh;
+    }
+
+
+}
