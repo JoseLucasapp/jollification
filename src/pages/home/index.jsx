@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     const [postsOption, setPostsOption] = useState('friends')
-
-    const navigate = useNavigate()
-    const posts = [{
+    const [posts, setPosts] = useState([{
         username: 'Dio',
         profile_pic: 'https://criticalhits.com.br/wp-content/uploads/2022/01/Dio_Brando.png',
         post: 'kslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkkslkaslkaklsnckasckmnsamxasklllllllllllllllllllllllllllllllllxkjcsajkxjkv'
@@ -28,7 +26,9 @@ const Home = () => {
         , isPrivate: true,
         isUser: false,
         isFriend: true
-    }]
+    }])
+
+    const navigate = useNavigate()
 
     const users = [
         {
@@ -193,6 +193,34 @@ const Home = () => {
         friendsModal.style.display = 'flex'
         hideUserProfileModal()
     }
+    function closeJolliModal() {
+        const jolliModal = document.getElementById('new-jolli')
+
+        jolliModal.style.display = 'none'
+    }
+
+    function openJolliModal() {
+        const jolliModal = document.getElementById('new-jolli')
+
+        jolliModal.style.display = 'flex'
+        hideUserProfileModal()
+        closeOtherUserModal()
+    }
+
+    function sendNewJolli() {
+        const jolli = document.getElementById('jolli').value
+        console.log(jolli)
+        setPosts(post => [...post, {
+            username: 'User',
+            profile_pic: 'https://pm1.narvii.com/8134/05481da521602f31f89f942eed3e6988263dda3cr1-500-500v2_00.jpg',
+            post: jolli
+            , isPrivate: true,
+            isUser: true,
+            isFriend: false
+        }])
+
+        closeJolliModal()
+    }
 
     function logOut() {
         navigate('/')
@@ -201,14 +229,14 @@ const Home = () => {
     return (
         <div className="home-main">
             <div className="home-left" id="home-left">
-                <div className="home-logo">
+                <div className="home-logo" onClick={() => openJolliModal()}>
                     <img src={process.env.PUBLIC_URL + 'images/logomain.png'} alt="" />
                 </div>
             </div>
             <div className="home-middle">
                 <ul>
                     {
-                        posts.map(post => {
+                        posts.map((post, i) => {
                             if (postsOption === 'all' && !post.isPrivate) {
                                 return (
                                     <li className="home-post">
@@ -343,6 +371,16 @@ const Home = () => {
             </div>
             <div className="close-otheruser-menu" id="close-otheruser-menu" onClick={() => closeOtherUserModal()}>
                 <img src={process.env.PUBLIC_URL + 'images/two-arrows.png'} alt="" />
+            </div>
+
+            <div className="new-jolli" id="new-jolli">
+                <div className="close" onClick={() => closeJolliModal()}>X</div>
+                <div className="jolli-details">
+                    <p>Write a new Jolli</p>
+                    <textarea name="jolli" id="jolli" placeholder="Hello everyone!!!"></textarea>
+                    <button onClick={() => sendNewJolli()}>Send</button>
+                </div>
+
             </div>
         </div>
     )

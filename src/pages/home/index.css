@@ -97,6 +97,12 @@
     width: 55%;
     height: 15vh;
     margin-top: 5vh;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.home-logo:hover {
+    transform: scale(1);
 }
 
 .home-logo img {
@@ -537,6 +543,90 @@
     width: 100%;
 }
 
+.new-jolli {
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color2);
+    margin-left: 25vw;
+    margin-top: 25vh;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 1em var(--color1);
+    display: none;
+}
+
+.new-jolli .jolli-details {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-jolli .jolli-details p {
+    font-size: 25px;
+    margin: 0vh;
+}
+
+.new-jolli .jolli-details textarea {
+    width: 80%;
+    min-height: 20vh;
+    max-height: 20vh;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    background-color: var(--color4);
+    resize: none;
+    color: white;
+    outline: none;
+    padding: 2%;
+    font-size: 15px;
+    border-radius: 5px;
+    border: transparent;
+}
+
+.new-jolli .jolli-details button {
+    width: 15%;
+    height: 5vh;
+    font-size: 17px;
+    background-color: var(--color4);
+    border: transparent;
+    transform: scale(0.9);
+    border-radius: 5px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+}
+
+.new-jolli .jolli-details button:hover {
+    transform: scale(1);
+}
+
+.new-jolli .close {
+    width: 5%;
+    height: 5vh;
+    background-color: var(--color4);
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-left: 90%;
+    margin-bottom: 40vh;
+    cursor: pointer;
+    transform: scale(0.9);
+    border-radius: 5px;
+}
+
+.new-jolli .close:hover {
+    transform: scale(1);
+}
+
 @media(max-width: 1000px) {
     .home-main {
         flex-direction: column;
@@ -651,6 +741,28 @@
         margin-top: 5vh;
     }
 
+    .new-jolli {
+        width: 90%;
+        height: 45vh;
+        margin-top: 30vh;
+        margin-left: 5%;
+    }
+
+    .new-jolli .close {
+        width: 10%;
+        margin-bottom: 37vh;
+        margin-left: 85%;
+    }
+
+    .new-jolli .jolli-details textarea {
+        width: 100%;
+        min-width: 85%;
+        max-width: 85%;
+    }
+
+    .new-jolli .jolli-details button {
+        width: 25%;
+    }
 
 
 }
